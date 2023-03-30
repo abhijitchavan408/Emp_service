@@ -1,0 +1,76 @@
+name: dockercompose13563172858262153648
+services:
+  empdb:
+    container_name: emp_db
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: Abhijit@123
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    networks:
+      employeeapp: null
+    ports:
+    - mode: ingress
+      target: 1433
+      published: "8002"
+      protocol: tcp
+  employeeregistrationservice:
+    build:
+      context: C:\Users\chavaabh\Documents\HPE Work\.Net Refracting\GRS\POC_1\EmployeeRegistrationServiceAPI
+      dockerfile: Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: EmployeeRegistrationService
+    container_name: emp_registration
+    depends_on:
+      empdb:
+        condition: service_started
+    entrypoint:
+    - tail
+    - -f
+    - /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      DB_HOST: empdb
+      DB_NAME: empdetails
+      DB_SA_PASSWORD: Abhijit@123
+    image: employeeregistrationservice
+    labels:
+      com.microsoft.visual-studio.project-name: EmployeeRegistrationService
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  ""'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      employeeapp: null
+    ports:
+    - mode: ingress
+      target: 80
+      protocol: tcp
+    - mode: ingress
+      target: 80
+      published: "28962"
+      protocol: tcp
+    tty: true
+    volumes:
+    - type: bind
+      source: C:\Users\chavaabh\vsdbg\vs2017u5
+      target: /remote_debugger
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\chavaabh\AppData\Roaming/ASP.NET/Https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\chavaabh\AppData\Roaming/Microsoft/UserSecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+networks:
+  employeeapp:
+    name: dockercompose13563172858262153648_employeeapp

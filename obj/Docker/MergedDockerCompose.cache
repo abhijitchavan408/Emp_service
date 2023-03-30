@@ -1,0 +1,18 @@
+name: dockercompose13563172858262153648
+services:
+  employeeregistrationservice:
+    build:
+      context: C:\Users\chavaabh\Documents\HPE Work\.Net Refracting\GRS\POC_1\EmployeeRegistrationServiceAPI
+      dockerfile: Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: employeeregistrationservice
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      protocol: tcp
+networks:
+  default:
+    name: dockercompose13563172858262153648_default

@@ -1,0 +1,42 @@
+name: dockercompose13563172858262153648
+services:
+  empdb:
+    container_name: emp_db
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: Abhijit@123
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    networks:
+      employeeapp: null
+    ports:
+    - mode: ingress
+      target: 1433
+      published: "8002"
+      protocol: tcp
+  employeeregistrationservice:
+    build:
+      context: C:\Users\chavaabh\Documents\HPE Work\.Net Refracting\GRS\POC_1\EmployeeRegistrationServiceAPI
+      dockerfile: Dockerfile
+    container_name: emp_registration
+    depends_on:
+      empdb:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      DB_HOST: empdb
+      DB_NAME: empdetails
+      DB_SA_PASSWORD: Abhijit@123
+    image: employeeregistrationservice
+    networks:
+      employeeapp: null
+    ports:
+    - mode: ingress
+      target: 80
+      protocol: tcp
+    - mode: ingress
+      target: 80
+      published: "28962"
+      protocol: tcp
+networks:
+  employeeapp:
+    name: dockercompose13563172858262153648_employeeapp
