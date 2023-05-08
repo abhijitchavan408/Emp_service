@@ -1321,24 +1321,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\chavaabh\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\chavaabh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chavaabh\\Documents\\HPE Work\\.Net Refracting\\GRS\\POC_1\\EmployeeRegistrationServiceAPI\\EmployeeRegistrationService.csproj",
+      "projectUniqueName": "C:\\Users\\chavaabh\\OneDrive - Hewlett Packard Enterprise\\Documents\\HPE work\\Projects\\.Net\\Emp_service\\EmployeeRegistrationService.csproj",
       "projectName": "EmployeeRegistrationService",
-      "projectPath": "C:\\Users\\chavaabh\\Documents\\HPE Work\\.Net Refracting\\GRS\\POC_1\\EmployeeRegistrationServiceAPI\\EmployeeRegistrationService.csproj",
+      "projectPath": "C:\\Users\\chavaabh\\OneDrive - Hewlett Packard Enterprise\\Documents\\HPE work\\Projects\\.Net\\Emp_service\\EmployeeRegistrationService.csproj",
       "packagesPath": "C:\\Users\\chavaabh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chavaabh\\Documents\\HPE Work\\.Net Refracting\\GRS\\POC_1\\EmployeeRegistrationServiceAPI\\obj\\",
+      "outputPath": "C:\\Users\\chavaabh\\OneDrive - Hewlett Packard Enterprise\\Documents\\HPE work\\Projects\\.Net\\Emp_service\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
         "C:\\Users\\chavaabh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1408,7 +1403,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   },
