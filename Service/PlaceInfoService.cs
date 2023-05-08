@@ -10,7 +10,9 @@ namespace EmployeeRegistrationService.Service
     public class PlaceInfoService : IPlaceInfoService
     {
         //public string sConStr = "Data Source=PEFLBELH3T;Initial Catalog=EmployeesDB;Integrated Security=True";
+
         //public string sConStr = "Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=UserInfo;Integrated Security=True;Pooling=False";
+
         //public string sConStr = "Server=172.17.0.2,1433;Database=EmployeeDB;User Id=SA;Password=abhijit@123;MultipleActiveResultSets=true";
         public string sConStr = "Server=34.28.174.26,1433;Database=EmployeeDB;User Id=SA;Password=abhijit@123";
         public int Add(PlaceInfo placeInfo)
