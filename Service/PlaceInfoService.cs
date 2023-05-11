@@ -14,7 +14,7 @@ namespace EmployeeRegistrationService.Service
         //public string sConStr = "Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=UserInfo;Integrated Security=True;Pooling=False";
 
         //public string sConStr = "Server=172.17.0.2,1433;Database=EmployeeDB;User Id=SA;Password=abhijit@123;MultipleActiveResultSets=true";
-        public string sConStr = "Server=34.28.174.26,1433;Database=EmployeeDB;User Id=SA;Password=abhijit@123";
+        public string sConStr = "Server=34.71.92.145,1433;Database=EmployeeDB;User Id=SA;Password=abhijit@123";
         public int Add(PlaceInfo placeInfo)
         {
             string sQry = "INSERT INTO [EmployeeDetails] ([Name],[Place],[About],[City],[State],[Country]) " +
